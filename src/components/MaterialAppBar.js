@@ -3,16 +3,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
+import {makeStyles} from '@material-ui/core/styles';
+import {AppBar, Toolbar, Typography, Button, IconButton} from '@material-ui/core/';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -33,17 +28,18 @@ export default function MaterialAppBar() {
         <div className={classes.root}>
             <AppBar position="static" color='primary'>
                 <Toolbar>
-                    {boolean('Menu button?', true, 'Elements') &&
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
-                        <MenuIcon />
+                    {boolean('Menu button', true, 'Elements') &&
+                    <IconButton edge="start" className={classes.menuButton} color="inherit"
+                                aria-label="Menu">
+                        <MenuIcon/>
                     </IconButton>
                     }
-                    {boolean('Header?', true, 'Elements') &&
+                    {boolean('Header', true, 'Elements') &&
                     <Typography variant="h6" className={classes.title}>
                         {text('Heading', 'News', 'Values')}
                     </Typography>
                     }
-                    {boolean('Button?', true, 'Elements') &&
+                    {boolean('Button', true, 'Elements') &&
                     <Button color="inherit">
                         {text('Button text', 'Login', 'Values')}
                     </Button>
