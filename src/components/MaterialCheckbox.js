@@ -11,7 +11,7 @@ export default function MaterialCheckbox({checkbox: {id, status}, onCheck, onUnc
         checkedB: false,
         checkedC: true,
     });
-
+    
     return (
         <div className={`list-item ${status}`}>
             <label className="checkbox">
