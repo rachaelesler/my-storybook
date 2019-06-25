@@ -17,7 +17,6 @@ export default function MaterialCheckbox({checkbox: {id, status}, onCheck, onUnc
             <label className="checkbox">
                 <Checkbox
                     color={'primary'}
-                    onChange={event => this.on}
                     checked={status === 'CHECKED'}
                     inputProps={{'aria-label': 'primary checkbox',}}
                     disabled={status === 'DISABLED'}
