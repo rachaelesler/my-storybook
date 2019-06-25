@@ -7,11 +7,6 @@ import { withKnobs, color, text, boolean, number } from '@storybook/addon-knobs'
 import Checkbox from '@material-ui/core/Checkbox';
 
 export default function MaterialCheckbox({checkbox: {id, status}, onCheck, onUncheck}) {
-    const [state, setState] = React.useState({
-        checkedA: true,
-        checkedB: false,
-    });
-
     return (
         <div className={`list-item ${status}`}>
             <label className="checkbox">

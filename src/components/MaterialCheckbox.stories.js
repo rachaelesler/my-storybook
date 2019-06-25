@@ -20,7 +20,7 @@ export const actions = {
 
 const stories = storiesOf('MaterialCheckbox', module)
     .addDecorator(story => <div style={{ padding: '3rem' }}>{story()}</div>)
-    .add('checked', () => <MaterialCheckbox checkbox={checkbox} {...actions} />)
+    .add('checked', () => <MaterialCheckbox checkbox={checkbox}  {...actions} />)
     .add('unchecked', () => <MaterialCheckbox checkbox={{ ...checkbox, status: 'UNCHECKED' }} {...actions} />);
 
 // Knobs

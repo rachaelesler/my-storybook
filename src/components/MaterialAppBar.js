@@ -11,6 +11,9 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import { storiesOf } from '@storybook/react';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -28,15 +31,23 @@ export default function MaterialAppBar() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar position="static" color='primary'>
                 <Toolbar>
+                    {boolean('Menu button?', true, 'Elements') &&
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
                         <MenuIcon />
                     </IconButton>
+                    }
+                    {boolean('Header?', true, 'Elements') &&
                     <Typography variant="h6" className={classes.title}>
-                        News
+                        {text('Heading', 'News', 'Values')}
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    }
+                    {boolean('Button?', true, 'Elements') &&
+                    <Button color="inherit">
+                        {text('Button text', 'Login', 'Values')}
+                    </Button>
+                    }
                 </Toolbar>
             </AppBar>
         </div>
