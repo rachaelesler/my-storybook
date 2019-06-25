@@ -2,16 +2,16 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withKnobs, color, text, boolean, number } from '@storybook/addon-knobs';
 
 import Checkbox from '@material-ui/core/Checkbox';
 
-export default function MaterialCheckbox({checkbox: {id, status}, onCheck, onUncheck, onDisable}) {
+export default function MaterialCheckbox({checkbox: {id, status}, onCheck, onUncheck}) {
     const [state, setState] = React.useState({
         checkedA: true,
         checkedB: false,
-        checkedC: true,
     });
-    
+
     return (
         <div className={`list-item ${status}`}>
             <label className="checkbox">
@@ -19,7 +19,7 @@ export default function MaterialCheckbox({checkbox: {id, status}, onCheck, onUnc
                     color={'primary'}
                     checked={status === 'CHECKED'}
                     inputProps={{'aria-label': 'primary checkbox',}}
-                    disabled={status === 'DISABLED'}
+                    disabled={boolean('Disabled', false)}
                 />
             </label>
         </div>

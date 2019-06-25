@@ -7,7 +7,6 @@ import '../src/index.css';
 import '@storybook/addon-actions/register';
 import '@storybook/addon-knobs/register';
 import '@storybook/addon-notes/register';
-import '@storybook/addon-knobs/register';
 
 const req = require.context('../src', true, /.stories.js$/);
 
