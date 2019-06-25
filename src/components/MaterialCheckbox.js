@@ -2,23 +2,46 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withKnobs, color, text, boolean, number } from '@storybook/addon-knobs';
+import {withKnobs, color, text, boolean, number} from '@storybook/addon-knobs';
 
 import Checkbox from '@material-ui/core/Checkbox';
 
-export default function MaterialCheckbox({checkbox: {id, status}, onCheck, onUncheck}) {
-    return (
-        <div className={`list-item ${status}`}>
-            <label className="checkbox">
-                <Checkbox
-                    color={'primary'}
-                    checked={status === 'CHECKED'}
-                    inputProps={{'aria-label': 'primary checkbox',}}
-                    disabled={boolean('Disabled', false)}
-                />
-            </label>
-        </div>
-    );
+export default class MaterialCheckbox extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            checked: true
+        };
+    }
+
+    // handleChange() {
+    //     console.log('HERE');
+    //     if(this.state.checked === true) {
+    //         this.setState({checked: false});
+    //     }
+    //     else {
+    //         this.setState({checked: true});
+    //     }
+    //     return;
+    // };
+
+    render() {
+        return (
+            <div className={`list-item ${this.state.checked}`}>
+                <label className="checkbox">
+                    <Checkbox
+                        id="checkbox"
+                        color={'primary'}
+                        value="CheckedA"
+                        checked={this.state.checked === true}
+                        inputProps={{'aria-label': 'primary checkbox',}}
+                        disabled={boolean('Disabled', false)}
+                        // onChange={this.handleChange()}
+                    />
+                </label>
+            </div>
+        );
+    }
 }
 
 MaterialCheckbox.propTypes = {
