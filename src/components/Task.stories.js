@@ -4,7 +4,7 @@ import React from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {withKnobs, object} from '@storybook/addon-knobs/react';
-import {witha11y} from '@storybook/addon-a11y';
+import {withA11y} from '@storybook/addon-a11y';
 
 import Task from './Task';
 
@@ -22,7 +22,7 @@ export const actions = {
 
 storiesOf('Task', module)
     .addDecorator(withKnobs)
-    .addDecorator(witha11y)
+    .addDecorator(withA11y)
     .addDecorator(story => <div style={{padding: '3rem'}}>{story()}</div>)
     .add('default', () => {
         return <Task task={object('task', {...task})} {...actions} />;
