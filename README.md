@@ -1,4 +1,4 @@
-# BABYLON STORYBOOK
+# Component Storybook
 A library of custom components used in the Babylon project. 
 
 ## Requirements
