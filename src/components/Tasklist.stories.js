@@ -6,6 +6,10 @@ import { storiesOf } from '@storybook/react';
 import { PureTaskList } from './TaskList';
 import { task, actions } from './Task.stories';
 
+// Must import for Jest
+import results from '../../jest-test-results.json';
+import { withTests } from '@storybook/addon-jest';
+
 export const defaultTasks = [
     { ...task, id: '1', title: 'Task 1' },
     { ...task, id: '2', title: 'Task 2' },
@@ -25,4 +29,5 @@ storiesOf('TaskList', module)
     .add('default', () => <PureTaskList tasks={defaultTasks} {...actions} />)
     .add('withPinnedTasks', () => <PureTaskList tasks={withPinnedTasks} {...actions} />)
     .add('loading', () => <PureTaskList loading tasks={[]} {...actions} />)
-    .add('empty', () => <PureTaskList tasks={[]} {...actions} />);
+    .add('empty', () => <PureTaskList tasks={[]} {...actions} />)
+    ;
