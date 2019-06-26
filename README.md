@@ -8,10 +8,14 @@ For development, you will need to install Yarn (https://yarnpkg.com/en/docs/inst
 ## Install
 
     $ git clone https://github.com/rachaelesler/my-storybook.git
-    $ cd my-storybook
-    $ npm install
 
 ## Running for the first time 
+
+Navigate to the project directory
+
+    $ cd my-storybook 
+    
+then run:
 
     $ yarn
     $ npm run test:generate-output -- --watch
