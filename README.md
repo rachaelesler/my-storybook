@@ -1,4 +1,5 @@
 # BABYLON STORYBOOK
+A library of custom components used in the Babylon project. 
 
 ## Install
 
@@ -6,9 +7,9 @@
     $ cd PROJECT
     $ npm install
 
-## Viewing the components in storybook
+## Viewing the Storybook
 
-In the project directory, run:
+In the project directory, navigate to the project directory and run:
 
-    $ `yarn run storybook`
+    $ yarn run storybook
 
