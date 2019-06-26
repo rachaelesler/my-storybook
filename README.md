@@ -3,8 +3,8 @@ A library of custom components used in the Babylon project.
 
 ## Install
 
-    $ git clone https://github.com/ORG/PROJECT.git
-    $ cd PROJECT
+    $ git clone https://github.com/rachaelesler/my-storybook
+    $ cd my-storybook
     $ npm install
 
 ## Viewing the Storybook
