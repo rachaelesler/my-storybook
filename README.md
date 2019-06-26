@@ -1,5 +1,5 @@
 # Component Storybook
-A library of custom components used in the Babylon project. 
+A library of custom components. 
 
 ## Requirements
 
