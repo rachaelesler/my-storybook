@@ -16,7 +16,7 @@ import { withA11y } from '@storybook/addon-a11y';
 addDecorator(withInfo); 
 addDecorator(withA11y);
 addParameters({
-	// Dark theme
+	// Dark
 	options: {
     theme: themes.dark,
   },
