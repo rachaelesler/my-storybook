@@ -34,7 +34,7 @@ The storybook will run on port 9009 by default (http://localhost:9009).
 ### Jest 
 Whenever you run 
 
-    $ npm run test:generate-output -- --watch
+    $ npm run test:generate-output -- --watchAll
     
 it writes the results of any `.test` files to `$/jest-test-results.json` in the project directory. 
 
