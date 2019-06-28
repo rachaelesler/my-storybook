@@ -2,6 +2,7 @@
 
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming'; // Allows themes
+import coolThemeName from './coolThemeName'; // For custom theme
 
 import '../src/index.css';
 
@@ -12,24 +13,18 @@ import '@storybook/addon-actions/register';
 import '@storybook/addon-knobs/register';
 import '@storybook/addon-notes/register';
 import { withA11y } from '@storybook/addon-a11y';
-
-// For jest
-import { withTests } from '@storybook/addon-jest';
-import results from '../jest-test-results.json';
+import { withDesign } from 'storybook-addon-designs';
 
 // Includes these addons in all stories
 addDecorator(withInfo); 
 addDecorator(withA11y);
-addDecorator(
-  withTests({	// for Jest
-    results,
-  })
-);
+addDecorator(withDesign); 
+
 
 addParameters({
 	// Dark theme
 	options: {
-    theme: themes.dark,
+    theme: coolThemeName,
   },
   // Configure backgrounds
   backgrounds: [

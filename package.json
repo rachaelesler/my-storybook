@@ -14,11 +14,15 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "test:generate-output": "jest --json --outputFile=jest-test-results.json"
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
+    "prebuild:storybook": "npm run test:generate-output",
+    "build:storybook": "build-storybook -c .storybook -o build/",
+    "predeploy": "npm run build:storybook",
+    "deploy": "gh-pages -d build/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,6 +53,7 @@
     "@storybook/react": "^5.1.9",
     "react-test-renderer": "^16.8.6",
     "require-context.macro": "^1.0.4",
+    "storybook-addon-designs": "^5.1.0",
     "storybook-addon-figma": "^0.1.0",
     "storybook-addon-react-live-edit": "^2.0.2"
   }
